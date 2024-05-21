@@ -1,0 +1,73 @@
+Data Year,Date,Building,Stream,Weight,Notes
+2018,3/1/2019,Campisi,Recycling,5.4,plastic bottles
+2018,3/1/2019,Campisi,Recycling,2.8,paper
+2018,3/1/2019,Campisi,Recycling,3.1,"bottles, cans"
+2018,3/1/2019,Campisi,Landfill in Recycling,0.5,"food wrappers, coffee cups"
+2018,3/1/2019,Campisi,Recycling,3.7,"plastic bottles, paper"
+2018,3/1/2019,Campisi,Compost in Recycling,0.8,"coffee cups, tissues"
+2018,3/1/2019,Campisi,Food Waste in Compost,5.3,"meat, cheese"
+2018,3/1/2019,Campisi,Food Waste in Compost,0.4,noodles
+2018,3/1/2019,Campisi,Compost,2.6,"paper towels, food boxes"
+2018,3/1/2019,Campisi,Food Waste in Compost,1.4,rice
+2018,3/1/2019,Campisi,Recycling in Compost,2.4,"cups, containers"
+2018,3/1/2019,Campisi,Food Waste in Landfill,1.6,"chips, salad"
+2018,3/1/2019,Campisi,Landfill,0.4,food wrappers
+2018,3/1/2019,Campisi,Compost in Landfill,0.6,tissues
+2018,3/1/2019,Campisi,Recycling in Landfill,0.8,plastic bottles
+2018,3/1/2019,Campisi,Landfill,0.6,"plastic forks, wrappers"
+2018,3/1/2019,Campisi,Recycling in Landfill,1.1,mason jar
+2018,3/1/2019,Campisi,Compost in Landfill,0.4,flowers
+2018,3/1/2019,Campisi,Food Waste in Landfill,1.1,"meat, popcorn"
+2018,3/1/2019,Campisi,Landfill,1.7,
+2019,5/10/2019,McWalsh,Recycling,11,"Bottles, containers"
+2019,5/10/2019,McWalsh,Compost in Recycling,2.6,"Cups, containers"
+2019,5/10/2019,McWalsh,Landfill in Recycling,1.5,
+2019,5/10/2019,McWalsh,Food Waste in Recycling,1.4,"Chips, burrito"
+2019,5/10/2019,McWalsh,Compost in Landfill,3.7,"Paper towels, napkins, containers, SCU dining"
+2019,5/10/2019,McWalsh,Recycling in Landfill,4.7,"Cutlery, cups, cans"
+2019,5/10/2019,McWalsh,Landfill,4,"Black cutlery, to go containers"
+2019,5/10/2019,McWalsh,Food Waste in Landfill,10.7,"Entite containers of food, restaurant, leftover event food"
+2019,5/10/2019,McWalsh,Compost,14,"Diningware, napkins, paper towels"
+2019,5/10/2019,McWalsh,Recycling in Compost,0.5,"Aluminum, bottles"
+2019,5/10/2019,McWalsh,Food Waste in Compost,12.8,"Rice, burrito"
+2019,11/1/2019,Dunne,Recycling,4,
+2019,11/1/2019,Dunne,Landfill in Recycling,0.7,
+2019,11/1/2019,Dunne,Compost in Recycling,1.5,
+2019,11/1/2019,Dunne,Food Waste in Recycling,0.1,
+2019,11/1/2019,Dunne,Recycling,0.6,
+2019,11/1/2019,Dunne,Recycling,5.3,
+2019,11/1/2019,Dunne,Compost in Recycling,1.9,
+2019,11/1/2019,Dunne,Landfill in Recycling,1.1,
+2019,11/1/2019,Dunne,Food Waste in Recycling,0.4,
+2019,11/1/2019,Dunne,Compost,2.9,
+2019,11/1/2019,Dunne,Food Waste in Compost,6,
+2019,11/1/2019,Dunne,Compost in Landfill,3.3,
+2019,11/1/2019,Dunne,Food Waste in Landfill,2.4,
+2019,11/1/2019,Dunne,Landfill,2.8,
+2019,11/1/2019,Dunne,Recycling in Landfill,1.1,
+2019,11/1/2019,Graham,Compost,30,
+2019,11/1/2019,Graham,Compost in Landfill,8.5,
+2019,11/1/2019,Graham,Compost in Recycling,6.45,
+2019,11/1/2019,Graham,Food Waste in Compost,39.35,
+2019,11/1/2019,Graham,Food Waste in Landfill,23.6,
+2019,11/1/2019,Graham,Food Waste in Recycling,2.7,
+2019,11/1/2019,Graham,Landfill,14.25,
+2019,11/1/2019,Graham,Landfill in Compost,5.2,
+2019,11/1/2019,Graham,Landfill in Recycling,2.95,
+2019,11/1/2019,Graham,Recycling,19.05,
+2019,11/1/2019,Graham,Recycling in Compost,3.8,
+2019,11/1/2019,Graham,Recycling in Landfill,5,
+2019,11/1/2019,Graham,Reusables in Landfill,0,
+2019,11/1/2019,Swig,Compost,17.3,
+2019,11/1/2019,Swig,Compost in Landfill,7.9,
+2019,11/1/2019,Swig,Compost in Recycling,2.75,
+2019,11/1/2019,Swig,Food Waste in Compost,18.3,
+2019,11/1/2019,Swig,Food Waste in Landfill,14,
+2019,11/1/2019,Swig,Food Waste in Recycling,3.1,
+2019,11/1/2019,Swig,Landfill,11.8,
+2019,11/1/2019,Swig,Landfill in Compost,1.7,
+2019,11/1/2019,Swig,Landfill in Recycling,1.1,
+2019,11/1/2019,Swig,Recycling,17.9,
+2019,11/1/2019,Swig,Recycling in Compost,2.05,
+2019,11/1/2019,Swig,Recycling in Landfill,7.3,
+2019,11/1/2019,Swig,Reusables in Landfill,2,

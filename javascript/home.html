@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Campus Map</title>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      position: relative;
+    }
+
+    header {
+      background-color: #b4043c;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      font-size: x-large;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #b4043c;
+    }
+
+
+    .image-container {
+      position: relative;
+      /* Adjust based on header height */
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* Removes bottom margin/gap */
+    }
+
+    .iframe-container {
+      position: fixed;
+      /* Makes the iframe lay on top of the page content */
+      top: 5%;
+      /* Starts 5% from the top */
+      left: 5%;
+      /* Starts 5% from the left */
+      width: 90%;
+      /* Total width is 90% of the viewport width */
+      height: 90%;
+      /* Total height is 90% of the viewport height */
+      display: none;
+      /* Initially hide the iframe */
+      z-index: 1001;
+      /* Higher index to be on top */
+      background-color: rgba(0, 0, 0, 0.8);
+      /* Semi-transparent background */
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      /* Adds shadow for better focus */
+      border: 1px solid #ccc;
+      /* Thin border around the iframe */
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #f00;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .map-point {
+      position: absolute;
+      border-radius: 50%;
+      background-color: yellow;
+      opacity: 0.8;
+      color: black;
+      text-align: center;
+      line-height: 20px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .map-point:hover {
+      cursor: pointer;
+    }
+
+    .report-section {
+      margin: 20px;
+      padding: 20px;
+      background-color: #f8f8f8;
+      border-top: 1px solid #ccc;
+      /* Visual separation from the image */
+    }
+
+    .sub-title {
+      position: relative;
+      font-size: 16px;
+      padding-top: 50px;
+      margin-top: 2px;
+      text-align: center;
+      color: #606060;
+    }
+  </style>
+</head>
+
+<body>
+  <header>Waste Management and Placement Visualization for Santa Clara University</header>
+  <div class="sub-title"> Click on the labelled Buildings to reveal Waste Data Visualisation -> </div>
+  <div class="image-container">
+    <img src="labelled_SCU_3D.png" alt="Campus Map" id="campusMap">
+  </div>
+  <div class="iframe-container" id="overlay">
+    <button class="close-btn" id="closeBtn">X</button>
+    <iframe src="" style="width:100%; height:100%;"></iframe>
+  </div>
+  <div class="report-section">
+    <h1>Report - Dynamic Visualisation</h1>
+    <p>This interactive web-based visualization demonstrates waste management and placement in the major buildings at
+      Santa Clara University over various months. The home page features a 3D map of the university, with labeled
+      buildings. By clicking these labels, users can explore waste data visualizations for each building, and further
+      scrolling reveals sub-stream data for misplaced waste. This design helps users understand waste management
+      practices, identify areas for improvement, and take active measures to enhance waste education.</p>
+    <div class="map">
+      <h2>The Map</h2>
+      <p>The homepage displays a responsive 3D map of Santa Clara University. This map is visually appealing and
+        provides location details and relative sizes of the buildings. The map includes legends for easy reference and
+        adjusts to different screen sizes for a consistent user experience.</p>
+    </div>
+    <div class="dataset">
+      <h2>The Dataset</h2>
+      <p>I have merged the static and dynamic visualization data, covering all major departments at SCU. Missing weight
+        or volume values are updated using proportional data from other substreams. Common substreams are added for
+        missing SubStream values, and the dataset is sorted and aggregated for monthly values for each building and
+        stream.</p>
+    </div>
+    <div class="visualizations">
+      <h2>The Visualizations</h2>
+      <h3>Stacked Bar Graphs</h3>
+      <p>The bar graphs represent the weight of waste generated in three categories: Compost, Recycling, and Landfill
+        for each building per month. The colors chosen—green for compost, blue for recycling, and grey for
+        landfill—align with California's waste bin colors, making them easily recognizable. Faded stacked bars on top
+        represent misplaced waste, emphasizing that such waste should not be present. Users can deselect legends to view
+        different value combinations. The following are represented by the faded stacked bars - </p>
+      <ul>
+        <li>Recycling: Compost in Recycling, Landfill in Recycling, Reusables in Recycling</li>
+        <li>Compost: Recycling in Compost, Landfill in Compost, Reusables in Compost</li>
+        <li>Landfill: Compost in Landfill, Recycling in Landfill, Reusables in Landfill</li>
+      </ul>
+      <h3>Pie Charts</h3>
+      <p>Pie charts provide a deeper look into misplaced waste streams, showing substreams for each main stream:</p>
+      <p>Substream colors indicate where waste should be placed (e.g., paper towels are green for compost). This
+        consistent color scheme aids in visualizing misplacement. Hovering over pie charts reveals substream names,
+        helping users understand specific waste misplacements and potential gaps in education. A new category,
+        Reusables, is added in yellow, highlighting items meant for reuse. Legends at the bottom show misplaced waste
+        streams by color.</p>
+    </div>
+
+    <div class="design-justification">
+      <h2>Design Justification</h2>
+      <h3>Visualization Types</h3>
+      <p>The stacked bar graph effectively displays cumulative data, making it easy to compare waste categories across
+        buildings and months. The pie charts complement this by breaking down misplaced waste, providing detailed
+        insights into specific issues.</p>
+
+      <h3>Size and Responsiveness</h3>
+      <p>The map and visualizations are responsive, adjusting to different screen sizes to ensure accessibility and
+        usability across devices.</p>
+
+      <h3>Colors and Visual Elements</h3>
+      <p>Using California's bin colors for waste categories leverages existing associations, aiding in immediate
+        recognition and understanding. The consistent color scheme across visualizations ensures clarity and coherence.
+      </p>
+
+      <h3>Effectiveness</h3>
+      <p>This design effectively delivers the story by combining high-level overviews with detailed breakdowns. Users
+        can easily navigate from the overall waste management landscape to specific issues within each building. The
+        interactive elements engage users, making the data exploration process intuitive and informative.</p>
+
+      <p>By visualizing waste management practices and misplacements, this project aims to highlight areas for
+        improvement and promote better waste education at Santa Clara University.</p>
+
+      <p>More details and full statistics can be found by visiting the individual links above on the map.</p>
+    </div>
+    <div class="additional-info">
+      <h2>Derived Insights</h2>
+      <p><strong>Benson Center</strong> - Reusables are being incorrectly placed in all three bins (compost, recycling,
+        and landfill), indicating confusion about proper disposal practices. Additionally, this building generated the
+        highest amount of recycling waste in 2017.</p>
+      <p><strong>Malley Center, Campus Villas, Lucas and Vari Halls</strong> - A significant amount of waste from all
+        categories (compost, recycling, and reusables) is being misplaced in the landfill over several months. This
+        pattern suggests ongoing issues with waste segregation.</p>
+      <p><strong>Dunne Hall</strong> - While the compost bin has no records of misplaced waste, a considerable amount of
+        compostable waste is found in other bins. This may indicate insufficient space for compost disposal or a lack of
+        proper compost bins.</p>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const image = document.getElementById('campusMap');
+        const imageContainer = document.querySelector('.image-container');
+
+        const points = [
+          { id: 1, x: 43.18514, y: 68.5061, link: 'benson.html' },
+          { id: 2, x: 57.9384, y: 50.0475, link: 'malley.html' },
+          { id: 3, x: 49.2916, y: 56.6127, link: 'learning-resources.html' },
+          { id: 4, x: 91.4020, y: 20.6470, link: 'campus-villas.html' },
+          { id: 5, x: 30.9721, y: 41.1037, link: 'lucas-vari.html' },
+          { id: 6, x: 36.4435, y: 78.5918, link: 'swig.html' },
+          { id: 7, x: 31.6072, y: 83.5394, link: 'dunne.html' },
+          { id: 8, x: 34.0986, y: 73.0732, link: 'mcwalsh.html' },
+          { id: 9, x: 57.4499, y: 64.7002, link: 'graham.html' },
+          { id: 10, x: 63.0679, y: 58.5156, link: 'campisi.html' }
+          // Add more points as needed
+        ];
+
+        points.forEach(point => {
+          const circle = document.createElement('a');
+          // circle.href = point.link;
+          circle.className = 'map-point';
+          circle.textContent = point.id; // Display the number
+          circle.style.left = `${point.x}%`;
+          circle.style.top = `${point.y}%`;
+          circle.onclick = () => {
+            overlay.style.display = 'block';
+            overlay.children[1].src = point.link; // Set the iframe source
+          };
+          imageContainer.appendChild(circle);
+        });
+
+        closeBtn.addEventListener('click', function () {
+          overlay.style.display = 'none'; // Hide the overlay when the close button is clicked
+        });
+      });
+    </script>
+</body>
+
+</html>
