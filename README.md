@@ -2,6 +2,9 @@
 
 A data visualization project using **JavaScript** and **Python** to explore and represent waste generation and placement patterns at **Santa Clara University**. These insights can aid in promoting sustainable practices across campus facilities.
 
+![Screenshot of the Visualiation](scu_map.png)
+
+
 ## Table of Contents
 
 - [Dataset](#dataset)
